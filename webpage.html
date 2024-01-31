@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMW Image Sliders</title>
+    <style>
+        body {
+            background-image: url('dark.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+            color: #b4ffa7;
+            font-family: Arial, sans-serif;
+        }
+
+        .slider-container {
+            max-width: 800px;
+            margin: auto;
+            overflow: hidden;
+            position: relative;
+            width: 600px;
+            height: 400px;
+        }
+
+        .slider {
+            display: flex;
+            transition: transform 0.5s ease;
+            width: 100%;
+        }
+
+        .slide {
+            flex: 0 0 auto;
+            width: 100%;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+
+        .platform {
+            background-color: #f0f0f0;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .platform h1 {
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .platform p {
+            color: #666;
+            font-size: 16px;
+        }
+
+        .platform-list {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .platform-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .platform-list li:last-child {
+            border-bottom: none;
+        }
+
+        .platform-list li a {
+            text-decoration: none;
+            color: #007bff;
+        }
+
+        .platform-list li a:hover {
+            text-decoration: underline;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <h2>Bmw M5 performance</h2>
+    <hr>
+    <p>One of the fastest sedans for now tuned by G-Power</p>
+    <h1> BMW M5 </h1>
+    <!-- Image Slider Container -->
+    <div class="slider-container" id="image-slider-container">
+        <div class="slider" id="image-slider">
+            <!-- Images for the slider -->
+            <div class="slide"><img src="m51.jpeg" alt="m51.jpeg"></div>
+            <div class="slide"><img src="m52.webp" alt="m52.webp"></div>
+            <div class="slide"><img src="image.bmp" alt="Image.bmp"></div>
+            <div class="slide"><img src="m56.jpg" alt="m56.jpg"></div>
+            <div class="slide"><img src="m66.jpg" alt="m66.jpg"></div>
+            <!-- Add more images as needed -->
+        </div>
+    </div>
+
+    <h1>Bmw SUV's</h1>
+    <div class="slider-container" id="suv-slider-container">
+        <div class="slider" id="suv-slider">
+            <div class="slide"><img src="33suv.avif" alt="33suv.avif"></div>
+            <div class="slide"><img src="suv.x5.webp" alt="suv.x5.webp"></div>
+            <div class="slide"><img src="suv9.webp" alt="suv9.webp"></div>
+            <div class="slide"><img src="x6.jpg" alt="x6.jpg"></div>
+            <div class="slide"><img src="suv12.jpg" alt="suv12.jpg"></div>
+            <div class="slide"><img src="x.webp" alt="x.webp"></div>
+            <div class="slide"><img src="suv0.png" alt="suv0.png"></div>
+            <div class="slide"><img src="suv9.webp" alt="suv9.webp"></div>
+            <!-- Add more images as needed -->
+        </div>
+    </div>
+
+    <hr>
+    <h1>Bmw sport car's</h1>
+    <div class="slider-container" id="sport-slider-container">
+        <div class="slider" id="sport-slider">
+            <div class="slide"><img src="330.avif" alt="330.avif"></div>
+            <div class="slide"><img src="430.webp" alt="430.webp"></div>
+            <div class="slide"><img src="44.jpg" alt="44.jpg"></div>
+            <div class="slide"><img src="77.jpg" alt="77.jpg"></div>
+            <div class="slide"><img src="sport6.jpeg" alt="sport6.jpeg"></div>
+            <div class="slide"><img src="sport3.webp" alt="sport3.webp"></div>
+            <div class="slide"><img src="sport5.jpg" alt="sport5.jpg"></div>
+            <div class="slide"><img src="image.jpg" alt="image.jpg"></div>
+            <div class="slide"><img src="bmw-3.jpg" alt="bmw-3.jpg"></div>
+            <!-- Add more images as needed -->
+        </div>
+    </div>
+
+    <hr>
+    <h1>Bmw i series</h1>
+    <div class="slider-container" id="i-series-slider-container">
+        <div class="slider" id="i-series-slider">
+            <div class="slide"><img src="i1.webp" alt="i1.webp"></div>
+            <div class="slide"><img src="i2.webp" alt="i2.webp"></div>
+            <div class="slide"><img src="i3.jpg" alt="i3.jpg"></div>
+            <div class="slide"><img src="i4.jpg" alt="i4.jpg"></div>
+            <div class="slide"><img src="i5.jpeg" alt="i5.jpeg"></div>
+            <!-- Add more images as needed -->
+        </div>
+    </div>
+
+    <div class="platform">
+        <h1>Supported Platforms</h1>
+        <p>Our service is available on the following platforms:</p>
+        <ul class="platform-list">
+            <li><a href="https://www.bmwusa.com/" target="_blank">Web</a></li>
+            <li><a href="https://www.bmwusa.com/" target="_blank">iOS</a></li>
+            <li><a href="https://www.bmwusa.com/" target="_blank">Android</a></li>
+            <li><a href="https://www.bmwusa.com/" target="_blank">Windows</a></li>
+            <li><a href="https://www.bmwusa.com/" target="_blank">Mac</a></li>
+            <!-- Add more platforms as needed -->
+        </ul>
+    </div>
+
+    <script>
+        // Function to handle slider behavior
+        function setupSlider(sliderId) {
+            const slider = document.getElementById(sliderId);
+            const slides = document.querySelectorAll(`#${sliderId} .slide`);
+            const slideWidth = slides[0].offsetWidth;
+
+            let counter = 1;
+
+            setInterval(() => {
+                slider.style.transform = `translateX(-${slideWidth * counter}px)`;
+                counter++;
+                if (counter === slides.length) {
+                    counter = 0;
+                }
+            }, 3000); // Change slide every 3 seconds
+        }
+
+        // Setup sliders
+        setupSlider('image-slider');
+        setupSlider('suv-slider');
+        setupSlider('sport-slider');
+        setupSlider('i-series-slider');
+    </script>
+</body>
+</html>
